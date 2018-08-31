@@ -17,7 +17,8 @@ footer {
 }
 
 .accountform {
-    padding-top: 20px;
+    padding-top: 20px; 
+    padding-left: 16px;
 }
 
 .badge {
@@ -92,8 +93,30 @@ caption p {
             background-size: cover;
             background-position:relative;
             background-repeat: no-repeat; 
-            min-height: 100vh;
-        
+            min-height: 100vh;  
+}            
             
+#name5{  
+    background-color: rgba(255,255,255,0.8);
+    margin-left: 0px;
+    margin-right: 0px;
+}    
+        
+.container1 {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2px; 
+    padding-right: 2px;    
+    
+}
 
+.login_container {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+.bg3-img {
+    padding: 50px;
+}
 

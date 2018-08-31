@@ -2,7 +2,8 @@
 {% load bootstrap_tags %} 
 {% load static from staticfiles %}
 {% block content %} 
-<div class="bg3-img" id="bg" style="background-image: url('{% static "images/background6.jpg"%}')" > 
+<div class="container login_container">
+<div class="bg3-img" id="bg" style="background-image: url({% static 'images/background6.jpg'%})" > 
 <div class="row row-flex"> 
 
     <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
@@ -17,5 +18,6 @@
         </fieldset>
     </form> 
     </div> 
-      </div> 
+      </div>
+      </div>
 {% endblock %}
