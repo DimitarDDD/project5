@@ -1,7 +1,7 @@
 from .base import* 
 
 
-ALLOWED_HOSTS = ['deeccomerce.herokuapp.com','ecommerce-dimitard.c9users.io', 'ecommerce-2-dimitard.c9users.io']   
+ALLOWED_HOSTS = ['bikeeco.herokuapp.com','ecommerce-dimitard.c9users.io', 'ecommerce-2-dimitard.c9users.io']   
 
 
 AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
