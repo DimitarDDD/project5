@@ -1,0 +1,62 @@
+{% extends 'base.html' %} 
+{% load static from staticfiles %}
+{% block content %}  
+
+
+<div class="bg6-img" id="bg" style="min-height:600px; background-image: url('{% static "images/background7.jpg"%}')" > 
+<div class="row row-flex"> 
+<div class="container">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<header class="ccheader">
+    <h1>Contact us</h1> 
+    <font size="3"></font>
+</header>
+<div class="wrapper">
+    <form method="post" action="" class="ccform">
+    <div class="ccfield-prepend">
+        <span class="ccform-addon"></span>
+        <input class="ccformfield" type="text" placeholder="Full Name" required>
+    </div>
+    <div class="ccfield-prepend">
+        <span class="ccform-addon"></span>
+        <input class="ccformfield" type="text" placeholder="Email" required>
+    </div>
+    <div class="ccfield-prepend">
+        <span class="ccform-addon"></span>
+        <input class="ccformfield" type="text" placeholder="Phone">
+    </div>
+     <div class="ccfield-prepend">
+        <span class="ccform-addon"></span>
+        <input class="ccformfield" type="text" placeholder="Subject" required>
+    </div>
+    <div class="ccfield-prepend">
+        <span class="ccform-addon"></span>
+        <textarea class="ccformfield" name="comments" rows="8" placeholder="Message" required></textarea>
+    </div>
+    <div class="ccfield-prepend">
+        <a class="btn btn-success" role="button" ><span aria-hidden="true"></span>Submit</a> 
+    </div>
+    </form>
+</div>
+<form action="mailto:dimitardobriko77@gmail.com.com" method="post" enctype="text/plain">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div id="map"class="col-sm-6 col-sm-offset-3"></div>
+
+
+            </div>
+        </div>
+    </div> 
+  </div>
+</div>  
+    
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+   
+</body>
+
+{% endblock %}

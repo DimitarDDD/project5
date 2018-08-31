@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block content %}  
+
+<div class="bg7-img" id="bg" style="min-height:600px; background-image: url('{% static "images/background7.jpg"%}')" > 
+<div class="row row-flex"> 
+
+{%for brand in brands%}
+
+   <div class="col-sm-4 col-lg-4 col-md-4 display panel panel-default">
+       <a href="/products/?brand={{brand.id}}">
+   <h1>{{brand.name}}</h1> 
+
+
+        <div class="panel-body">
+
+            <img src="{{MEDIA_URL}}{{brand.image}}" alt="" width=150 height=150> 
+     <div class="ratings">
+        <p class="pull-right">{{brand.reviews_received.all|length}} reviews</p> 
+                                <h4>{{brand.name}}
+                                </h4>
+                            </div> 
+                            
+            <p>
+            {% for star in brand.stars %}
+            <i class="fa fa-star"></i>
+            {% endfor %}
+            {% if brand.needs_half_star %}
+            <i class="fa fa-star-half"></i>
+            {% endif %}                
+
+            </p> 
+        </div> 
+            </a> 
+         </div> 
+        
+                            
+                       
+    {% endfor %}
+    </div> 
+    </div> 
+    </div>
+{% endblock content %}
