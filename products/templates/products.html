@@ -3,10 +3,10 @@
 {% block content %} 
 <div class="bg5-img" id="bg" style="background-image: url('{% static "images/background7.jpg"%}')" > 
 <div class="row row-flex"> 
-<p>Filter By Brand</p>
+<p style="color:green;">Filter By Brand</p>
 <form>
 {{search_form}}
-<input type="submit" value="Go"/>
+<button class="btn btn-success" type="submit">Go</button>
 </form>
 
 
@@ -19,7 +19,7 @@
                             <img src="{{MEDIA_URL}}{{product.image}}" alt="" width=150 height=150>
                             <div class="caption"> 
                                 <h4 class="pull-right">€{{product.price}}</h4>
-                                <h4><a href="#">{{product.name}} - {{product.brand}}</a>
+                                <h4><a href="{% url 'product_details' product.id %}">{{product.name}} - {{product.brand}}</a>
                                 </h4>
                                 <p>{{product.description | linebreaksbr }}</p>
                                 <p>{{product.brand}}</p>
