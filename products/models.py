@@ -9,6 +9,16 @@ class Product(models.Model):
     image=models.ImageField(upload_to='images')  
     brand=models.ForeignKey(Brand, on_delete=models.CASCADE, blank=False, null=False)
     
+    def average_rating(self): 
+        if self.reviews_received.all():
+            average = self.reviews_received.all().aggregate(Avg('rating'))
+            n = average['rating__avg']
+            return float(round(n, 2))
+        else:
+            return 0
+        
+
+
     
     def __str__(self): 
         return self.name

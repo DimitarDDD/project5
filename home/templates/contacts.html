@@ -3,55 +3,75 @@
 {% block content %}  
 
 
-<div class="bg6-img" id="bg" style="min-height:600px; background-image: url('{% static "images/background7.jpg"%}')" > 
+<div class="bg6-img" id="bg" style="background-image: url('{% static "images/background7.jpg"%}')" > 
 <div class="row row-flex"> 
 <div class="container">
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-<header class="ccheader">
-    <h1>Contact us</h1> 
-    <font size="3"></font>
-</header>
-<div class="wrapper">
-    <form method="post" action="" class="ccform">
-    <div class="ccfield-prepend">
-        <span class="ccform-addon"></span>
-        <input class="ccformfield" type="text" placeholder="Full Name" required>
-    </div>
-    <div class="ccfield-prepend">
-        <span class="ccform-addon"></span>
-        <input class="ccformfield" type="text" placeholder="Email" required>
-    </div>
-    <div class="ccfield-prepend">
-        <span class="ccform-addon"></span>
-        <input class="ccformfield" type="text" placeholder="Phone">
-    </div>
-     <div class="ccfield-prepend">
-        <span class="ccform-addon"></span>
-        <input class="ccformfield" type="text" placeholder="Subject" required>
-    </div>
-    <div class="ccfield-prepend">
-        <span class="ccform-addon"></span>
-        <textarea class="ccformfield" name="comments" rows="8" placeholder="Message" required></textarea>
-    </div>
-    <div class="ccfield-prepend">
-        <a class="btn btn-success" role="button" ><span aria-hidden="true"></span>Submit</a> 
-    </div>
-    </form>
-</div>
-<form action="mailto:dimitardobriko77@gmail.com.com" method="post" enctype="text/plain">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
+<div class="col-sm-6" id="contp" >
+ <h2 class="h1-responsive font-weight-bold text-center my-5">Contact us</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+        matter of hours to help you.</p>
 
-                <div id="map"class="col-sm-6 col-sm-offset-3"></div>
+    <div class="row">
 
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                  
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="6" class="form-control md-textarea"></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+            <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+    </div>
+
+</section>
 
             </div>
         </div>
     </div> 
   </div>
-</div>  
+
     
     
     <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>

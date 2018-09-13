@@ -29,7 +29,12 @@
                                 <p>{{product.brand}}</p>
                             </div> 
                             
-                            <div class="ratings">
+                            <div class="ratings"> 
+                                {% if product.reviews_received.all %} {% if product.reviews_received.all|length == 1 %}
+                                <p class="pull-right">{{product.reviews_received.all|length}} review</p>
+                                {% else %}
+                                <p class="pull-right">{{product.reviews_received.all|length}} reviews</p>
+                                {% endif %} {% endif %}
                                 <p class="pull-right">{{product.reviews_received.all|length}} reviews</p>
                                 <p>
                                 {% for star in product.stars %}

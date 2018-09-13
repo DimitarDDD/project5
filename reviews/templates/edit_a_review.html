@@ -1,0 +1,19 @@
+
+{% load bootstrap_tags %}
+
+<div class="card card-outline-secondary my-4">
+    <div class="card-header">
+      <h2>Edit a Review</h2>
+    </div>
+
+    <div class="card-body">
+ 
+        <legend class="brand-text-header-black">Edit the Review</legend>
+        {% csrf_token %}
+        {{ review_form | as_bootstrap }}
+        <br>
+        <button type="submit" class="btn btn-info">Save</button>
+      </fieldset>
+    </form>
+  </article>
+

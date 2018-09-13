@@ -1,0 +1,19 @@
+
+{% load bootstrap_tags %}
+<div class="card card-outline-secondary my-4">
+    <div class="card-header">
+      <h2>Add a Review</h2>
+    </div>
+
+    <div class="card-body">
+      <form method="post" action="{% url 'add_a_review' %}">
+        {% csrf_token %}
+        
+        {{ review_form | as_bootstrap }}
+        
+        <input type="hidden" name="product" value="{{product.id}}"/>
+        <input type="submit" class="btn btn-success" value="Leave Review"/> 
+        <a href="{% url 'edit_a_review' product.id %}"class="btn btn-secondary btn-lg " role="button">Edit</a>
+      </form>
+    </div>
+</div>

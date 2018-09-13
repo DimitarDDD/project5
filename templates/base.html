@@ -39,7 +39,11 @@
                         <li><a href="{% url 'home' %}">Home</a></li>
                     {%  else %}
                         <li><a href="{% url 'register' %}">Register</a></li>
-                        <li><a href="{% url 'login' %}">Log In</a></li>
+                        <li><a href="{% url 'login' %}">Log In</a></li> 
+                        <li><a href="{% url 'brands' %}">Brands</a></li> 
+                        <li><a href="{% url 'contacts' %}">Contacts</a></li>  
+                        <li><a href="{% url 'products' %}">Products</a></li> 
+                        <li><a href="{% url 'home' %}">Home</a></li>
                     {% endif %} 
                         <li>
                         <a href="{% url 'view_cart' %}">
@@ -54,8 +58,7 @@
         </div>
     </nav>
     {% if messages %}
-        <div class="alert alert-success">
-            <div class="messages">
+       
                 {% for message in messages %}
                     {{ message }}
                 {% endfor %}
