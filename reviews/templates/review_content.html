@@ -7,15 +7,16 @@
     </div>
     <div class="card-body">
 
-    {% for review in product.reviews_received.all %}
+    {% for review in reviews.all %}
     <p><strong>{{review.title}}</strong></p>
     <p>{{review.content}}</p>
     <p><small >Rating:
               {% for star in review.stars %}
                   <i class="fas fa-star"></i>
               {% endfor %}
-              </small></p>
-    <p><small class="text-muted">Posted by {{review.reviewer.username}} | {{review.date}}</small></p>
+              </small></p> 
+               <h3>{{ review.product.heading }}</h3>
+    <p><small class="text-muted">Posted by {{review.author.username}} : {{review.date}} : {review_content}</small></p>
 
     
     {%endfor%}

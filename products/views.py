@@ -15,8 +15,9 @@ def all_products(request):
     if "brand" in request.GET:
         products = Product.objects.filter(brand=request.GET['brand'])
     
-    search_form = SearchProductForm(request.GET)
-    return render(request, "products.html", {"products": products, 'search_form': search_form})
+    search_form = SearchProductForm(request.GET) 
+    reviews=Review.objects.all() 
+    return render(request, "products.html", {"products": products, 'search_form': search_form, 'reviews':reviews})
     
 def product_details(request,id):
     product=get_object_or_404(Product, pk=id)  

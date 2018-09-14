@@ -44,7 +44,6 @@
           {% include "add_a_review.html" %} 
            
         {% else %}
-          <p><a href="{% url 'login' %}?next={{request.path}}">Login</a> or <a href="{% url 'register' %}?next={{request.path}}">Register</a> to Leave a Review</p>
         {% endif %}
     </div> 
   </div>

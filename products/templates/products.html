@@ -29,21 +29,22 @@
                                 <p>{{product.brand}}</p>
                             </div> 
                             
-                            <div class="ratings"> 
-                                {% if product.reviews_received.all %} {% if product.reviews_received.all|length == 1 %}
-                                <p class="pull-right">{{product.reviews_received.all|length}} review</p>
-                                {% else %}
-                                <p class="pull-right">{{product.reviews_received.all|length}} reviews</p>
-                                {% endif %} {% endif %}
-                                <p class="pull-right">{{product.reviews_received.all|length}} reviews</p>
+                            <div class="ratings">   
+                              <div class="row">
+                                 {% for review in reviews %}   
+                                 
+                            <p class = 'review'>{{ review.author}}: {{review.content}}</p>
+                               {% endfor %} 
+                                  </div>
                                 <p>
                                 {% for star in product.stars %}
                                 <i class="fa fa-star"></i>
                                 {% endfor %}
                                 {% if product.needs_half_star %}
                                 <i class="fa fa-star-half"></i>
+                                
                                 {% endif %}                
-
+                                
                                 </p> 
                                 
                                 <form method="POST" action="{% url 'add_to_cart' product.id %}" >
@@ -70,5 +71,5 @@
     </div>
     </div>
      
-    
+     
 {% endblock content %}
