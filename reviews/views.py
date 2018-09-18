@@ -10,7 +10,7 @@ def review_content(request,pk):
     review.save()
     return render(request, "review_content.html", {'review': review}) 
 
-def add_a_review(request):
+def add_a_review(request,pk):
     if not request.user.is_authenticated:
         return HttpResponseForbidden()
     
@@ -20,10 +20,10 @@ def add_a_review(request):
     form = ReviewForm(request.POST)
     if form.is_valid():
         review = form.save(commit=False)
-        review.author = request.user
+        review.author= request.user
         review.product = product
         review.save()
-        return redirect(reverse('product_details', args=(product_id,)))
+        return redirect(reverse('product_details', args=(product_id)))
            
  
 def edit_a_review(request,pk):  

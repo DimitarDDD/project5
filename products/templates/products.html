@@ -30,12 +30,7 @@
                             </div> 
                             
                             <div class="ratings">   
-                              <div class="row">
-                                 {% for review in reviews %}   
-                                 
-                            <p class = 'review'>{{ review.author}}: {{review.content}}</p>
-                               {% endfor %} 
-                                  </div>
+                              
                                 <p>
                                 {% for star in product.stars %}
                                 <i class="fa fa-star"></i>
