@@ -10,7 +10,7 @@ def review_content(request,pk):
     review.save()
     return render(request, "review_content.html", {'review': review}) 
 
-def add_a_review(request,pk):
+def add_a_review(request pk):
     if not request.user.is_authenticated:
         return HttpResponseForbidden()
     
@@ -23,14 +23,13 @@ def add_a_review(request,pk):
         review.author= request.user
         review.product = product
         review.save()
-        return redirect(reverse('product_details', args=(product_id,)))
+        return redirect(reverse('product_details' args=(product_id)))
            
  
 def edit_a_review(request,pk):  
-     if request.user: 
-         
-        product =get_object_or_404(Product)
-        review = get_object_or_404(review, pk=pk)if pk else None
+     if request.user:
+        product = get_object_or_404(Product)
+        review = get_object_or_404(Review, pk=pk)if pk else None
         if request.method == 'POST':
             review_form = ReviewForm(request.POST, instance=review)
             if review_form.is_valid():

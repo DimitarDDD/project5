@@ -20,17 +20,16 @@ def add_a_review(request,pk):
     form = ReviewForm(request.POST)
     if form.is_valid():
         review = form.save(commit=False)
-        review.author= request.user
+        review.author(pk=pk)= request.user
         review.product = product
         review.save()
-        return redirect(reverse('product_details', args=(product_id,)))
+        return redirect(reverse('product_details' args=(product_id)))
            
  
 def edit_a_review(request,pk):  
-     if request.user: 
-         
-        product =get_object_or_404(Product)
-        review = get_object_or_404(review, pk=pk)if pk else None
+     if request.user:
+        product = get_object_or_404(Product)
+        review = get_object_or_404(Review, pk=pk)if pk else None
         if request.method == 'POST':
             review_form = ReviewForm(request.POST, instance=review)
             if review_form.is_valid():
