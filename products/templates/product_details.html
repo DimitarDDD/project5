@@ -28,10 +28,11 @@
         {% for review in reviews %}   
           <div class="row">
             <div class="col-md-12">
+            
               {% if user == review.author %} 
-              <input id="reviewid" type="hidden" value="review.id">
+             <input type="hidden" name="review_id" value="{{ product.id }}"/>
                 <a href="{% url 'delete_review' pk=product.id %}" class="pull-right review-delete-anchor"><i class="fa fa-trash fa-lg"></i></a>
-                <a href="{% url 'edit_a_review' pk=review.pk %}" class="pull-right review-edit-anchor"><i class="fa fa-pencil fa-lg"></i></a>
+                <a href="{% url 'edit_a_review' pk=review.id %}" class="pull-right review-edit-anchor"><i class="fa fa-pencil fa-lg"></i></a>
               {% endif %}
               <h4><class="default-anchor">{{ review.title }}</a></h4>
               <div class="review-thumb">
