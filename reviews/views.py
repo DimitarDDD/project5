@@ -41,15 +41,20 @@ def edit_a_review(request,pk):
 
    
   
-def delete_review(request, pk=None):
 
-    if request.user:
-        product = get_object_or_404(Product)
-        review = get_object_or_404(Review, pk=pk) if pk else None
-        review.delete() 
-        return redirect('products')   
-    else: 
-        return redirect(reverse('product_details'))
+def delete_review(request):      
+    id = request.POST['review_id']      
+    pk = request.POST['product_id']      
+    product = get_object_or_404(Product, pk=pk)      
+    review = get_object_or_404(Review, id=id) 
+    if request.method == 'POST':              
+            try:
+                review.delete()                  
+                messages.success(request,'You have successfully deleted the review!')                
+            except Review.DoesNotExist:   
+                 messages.warning(request, 'The comment review not be deleted.')      
+    return redirect(reverse('product_details'))
+
         
        
     
