@@ -22,7 +22,7 @@ def all_products(request):
 def product_details(request,id):
     product=get_object_or_404(Product, pk=id)  
     product_images = ProductImages.objects.filter(product=id)  
-    reviews=Review.objects.all() 
+    reviews=Review.objects.filter(product=id)
     review_form = ReviewForm()
     return render(request, 'product_details.html',{'product':product,'product_images':product_images, 'review_form':review_form,'reviews':reviews})  
     
