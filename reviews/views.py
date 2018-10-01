@@ -45,7 +45,7 @@ def edit_a_review(request,pk):
 def delete_review(request):      
     id = request.POST['review_id']      
     pk = request.POST['product_id']      
-    product = get_object_or_404(Product, pk=pk)      
+    product = get_object_or_404(Product)      
     review = get_object_or_404(Review, id=id) 
     if request.method == 'POST':              
             try:
