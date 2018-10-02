@@ -3,7 +3,7 @@ from django.http import HttpResponseForbidden
 from .forms import ReviewForm 
 from reviews.models import Review
 from products.models import Product
-
+from django.contrib import messages
 # Create your views here. 
 
 
@@ -15,7 +15,7 @@ def add_a_review(request,pk):
     product = get_object_or_404(Product, pk=product_id)
     form = ReviewForm(request.POST)
     if form.is_valid():
-        review = form.save()
+        review = form.save(commit=False)
         review.author= request.user
         review.product = product 
         review = form.save()
@@ -53,7 +53,7 @@ def delete_review(request):
                 messages.success(request,'You have successfully deleted the review!')                
             except Review.DoesNotExist:   
                  messages.warning(request, 'The comment review not be deleted.')      
-    return redirect(reverse('product_details'))
+    return redirect('product_details')
 
         
        
