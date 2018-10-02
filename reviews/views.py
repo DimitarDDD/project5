@@ -53,7 +53,7 @@ def delete_review(request):
                 messages.success(request,'You have successfully deleted the review!')                
             except Review.DoesNotExist:   
                  messages.warning(request, 'The comment review not be deleted.')      
-    return redirect('product_details')
+    return redirect('products')
 
         
        
