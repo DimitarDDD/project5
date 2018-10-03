@@ -6,11 +6,10 @@ from products.models import Product
 from django.contrib import messages
 # Create your views here. 
 
-
 def add_a_review(request,pk): 
     if not request.user.is_authenticated:
         return HttpResponseForbidden()
-    pk = request.POST['review_id']    
+        
     product_id = int(request.POST['product'])
     product = get_object_or_404(Product, pk=product_id)
     form = ReviewForm(request.POST)

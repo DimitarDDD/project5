@@ -35,7 +35,7 @@
               <input type="hidden" name="product_id" value="{{product.id}}"/>
 			  <input type="hidden" name="review_id" value="{{review.id}}"/>
 			  <input class="btn btn-success" type="submit" value="Delete"/>
-			    <a href="{% url 'edit_a_review' preview.id %}" class="btn btn-secondary btn-lg " role="button">Edit</a>
+			    <a href="{% url 'edit_a_review' review.id %}" class="btn btn-secondary btn-lg " role="button">Edit</a>
                
             </form>
           
@@ -73,7 +73,7 @@
 
         {% if user.is_authenticated %}
           {% include "add_a_review.html" %} 
-           
+          
         {% else %}
         {% endif %}
     </div> 

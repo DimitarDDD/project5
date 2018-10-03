@@ -6,16 +6,12 @@
     <div class="card-header"> 
      <h2>Edit a Review</h2>
     </div>
-<form action="{% url 'edit_a_review' pk=review.id %}" method="post">   
-    <div class="card-body">
-        {% csrf_token %} 
-        {{ review_form | as_bootstrap }}
-        <br> 
-       <input type="hidden" name="product" value="{{product.id}}"/> 
-       <input type="hidden" name="review_id" value="{{review.id}}"/>
-       <input class="btn btn-success" type="submit" value="Edit"/></p> 
-      </fieldset>
-</form>
-  </article>
+  <form method="POST" enctype="multipart/form-data" class='post-form' id='form'>
+                {% csrf_token %}
+                {{ review_form | as_bootstrap }}
+                <button type="submit" id= 'post-btn' class='btn btn-lg btn-default login-btn'>Edit</button>
+            </form>
+  </div>
 {% endblock %}
 
+  
