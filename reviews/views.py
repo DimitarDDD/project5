@@ -10,7 +10,7 @@ from django.contrib import messages
 def add_a_review(request,pk): 
     if not request.user.is_authenticated:
         return HttpResponseForbidden()
-    
+    pk = request.POST['review_id']    
     product_id = int(request.POST['product'])
     product = get_object_or_404(Product, pk=product_id)
     form = ReviewForm(request.POST)
@@ -26,12 +26,10 @@ def add_a_review(request,pk):
 def edit_a_review(request,pk):  
     review_form = ReviewForm 
     if request.user: 
-        review = get_object_or_404(Review, pk=pk)if pk else None 
-        
+        review = get_object_or_404(Review, pk=pk)if pk else None  
         if request.method == 'POST': 
             review_form = ReviewForm(request.POST, instance=review) 
             if review_form.is_valid():
-                review = review_form.save(commit=False)
                 review.author = request.user
                 review_form.save()
                 return redirect('products')
