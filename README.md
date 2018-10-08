@@ -3,11 +3,6 @@ Ecommerce_2 is a-commerce app - Stream 4 Project
 
 This is a fictional ecommerce site, for the nature of this project, for a customers where they can buy or look for a bikes and pay the parcticular bike they want, and customers can lieve their own reviews. 
 
-Demo
-A live demo of this project can be found here. This application is hosted on Heroku using a Postgres (MySQL Database)
-
-Desktop Demo
-
 UX
 This site is intended for users  to buy  bikes for the season. By paying online, it makes it easier for users and the app owner to keep track of what is paid and what they ordered, rather than having to keep track of checks or multiple spreadsheets.
 
@@ -16,9 +11,6 @@ If the user wants to buy a bike must log in and creat an account, but still if t
 
 When you click to see detail on a product, you'll be able to also see all of the other reviews and pictures for that product.If the user is loged in ,can add,edit or deelete their own reviews.The navbar is with the same background cover,logo and html file order in every single page.
 The user as well can use the recommend button to recommend a product they want when they arre writing a review. 
-
-
-I wanted to implement an ease of access with this site, to make it as simple and obvious as possible for both swimmers and alumni to navigate through the site while maintaining consistency throughout the design.
 
 Technologies
 Django (2.0)
@@ -30,11 +22,9 @@ HTML
 CSS
 Bootstrap (3.3.7)
 Development Process
-The backend was done first, with the styling added after. As the styling was progressing, and after it was mostly finished, there were some back-end additions that needed to be made for testing and bug fixes.
+The backend was done first, with the styling added after. As the styling was progressing, and after it was mostly finished, there were some back-end additions that needed to be made.
 
-Once the styling was looking the way I wanted, 
-
-
+Once the styling was looking the way I wanted.
 
 Manual Testing:
 Manual testing was done for all edit/add/delete/appearance functions in review apps. This was to ensure that what was supposed to be deleting was deleting, and that only designated users (review of the owner or the superuser) was able to delete/edit the content selected. I also verified that the correct author showed up for the posts and comments. All links and forms are verified to be working correctly via manual testing.
